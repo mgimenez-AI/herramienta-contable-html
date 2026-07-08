@@ -1,0 +1,152 @@
+{
+  "team": [
+    {
+      "id": "m",
+      "nombre": "Mauricio Gimenez",
+      "rol": "Jefe de Contabilidad e Impuestos",
+      "iniciales": "MG",
+      "color": "#00549E"
+    },
+    {
+      "id": "a",
+      "nombre": "Agustina Altez",
+      "rol": "Analista Contable",
+      "iniciales": "AA",
+      "color": "#009961"
+    },
+    {
+      "id": "r",
+      "nombre": "Roberto Noble",
+      "rol": "Asistente de Contabilidad e Impuestos",
+      "iniciales": "RN",
+      "color": "#D4A017"
+    }
+  ],
+  "projects": [
+    {
+      "id": "cierre",
+      "nombre": "Cierre contable mensual",
+      "desc": "Cierre mensual de resultados",
+      "color": "#00549E",
+      "tipo": "recurrente"
+    },
+    {
+      "id": "impuestos",
+      "nombre": "Liquidacion de impuestos",
+      "desc": "IVA, Ganancias, IIBB y retenciones",
+      "color": "#D4A017",
+      "tipo": "recurrente"
+    },
+    {
+      "id": "concil",
+      "nombre": "Conciliaciones bancarias",
+      "desc": "Bancos, caja y cuentas de balance",
+      "color": "#8DB9CA",
+      "tipo": "recurrente"
+    },
+    {
+      "id": "auditoria",
+      "nombre": "Auditoria externa Q2",
+      "desc": "Papeles de trabajo y requerimientos",
+      "color": "#009961",
+      "tipo": "extraordinario"
+    },
+    {
+      "id": "reporting",
+      "nombre": "Reporting a casa matriz",
+      "desc": "HFM, Intercompany y Package",
+      "color": "#707372",
+      "tipo": "recurrente"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Cierre contable del mes",
+      "resp": "a",
+      "estado": "progreso",
+      "venc": "2026-07-14",
+      "proy": "cierre",
+      "prio": "alta",
+      "recurrente": true,
+      "desc": "Registracion y cierre de cuentas de resultado y patrimoniales del mes."
+    },
+    {
+      "id": 2,
+      "title": "Conciliacion bancaria Banco Galicia",
+      "resp": "r",
+      "estado": "pendiente",
+      "venc": "2026-07-12",
+      "proy": "concil",
+      "prio": "media",
+      "recurrente": true,
+      "desc": "Conciliar extractos contra mayor contable de la cuenta corriente principal."
+    },
+    {
+      "id": 3,
+      "title": "DDJJ IVA - Posicion mensual",
+      "resp": "m",
+      "estado": "revision",
+      "venc": "2026-07-22",
+      "proy": "impuestos",
+      "prio": "alta",
+      "recurrente": true,
+      "desc": "Armado y revision de la DDJJ de IVA."
+    },
+    {
+      "id": 4,
+      "title": "Anticipo Impuesto a las Ganancias",
+      "resp": "a",
+      "estado": "pendiente",
+      "venc": "2026-07-19",
+      "proy": "impuestos",
+      "prio": "alta",
+      "recurrente": true,
+      "desc": "Calculo y presentacion del anticipo mensual de Ganancias."
+    },
+    {
+      "id": 5,
+      "title": "Reporting mensual a casa matriz",
+      "resp": "m",
+      "estado": "progreso",
+      "venc": "2026-07-16",
+      "proy": "reporting",
+      "prio": "alta",
+      "recurrente": true,
+      "desc": "Carga del package financiero mensual para consolidacion."
+    },
+    {
+      "id": 6,
+      "title": "Papeles de trabajo auditoria",
+      "resp": "a",
+      "estado": "pendiente",
+      "venc": "2026-07-29",
+      "proy": "auditoria",
+      "prio": "media",
+      "recurrente": false,
+      "desc": "Preparacion de papeles y anexos solicitados por auditores externos."
+    },
+    {
+      "id": 7,
+      "title": "Conciliacion de cuentas por pagar",
+      "resp": "r",
+      "estado": "completado",
+      "venc": "2026-07-07",
+      "proy": "concil",
+      "prio": "baja",
+      "recurrente": true,
+      "desc": "Cotejo del subdiario de proveedores contra saldos contables."
+    },
+    {
+      "id": 8,
+      "title": "DDJJ Ingresos Brutos",
+      "resp": "r",
+      "estado": "progreso",
+      "venc": "2026-07-24",
+      "proy": "impuestos",
+      "prio": "media",
+      "recurrente": true,
+      "desc": "Distribucion de base imponible por jurisdiccion."
+    }
+  ]
+}

@@ -1,6 +1,5 @@
 import { useCallback, useMemo, useRef, useState } from 'react';
 import { useData } from '../context/DataContext';
-import { useAuth } from '../auth/AuthProvider';
 import { useTheme } from './useTheme';
 import { useToast } from './useToast';
 import { ESTADOS, PRIO, PALETTE, MESL, DOWL, TINT_BY_ESTADO } from '../data/constants';
@@ -19,21 +18,13 @@ const NUEVO_LABEL = { task: 'Nueva tarea', person: 'Nuevo integrante', project: 
 
 export function useAppLogic() {
   const data = useData();
-  const auth = useAuth();
   const { team, projects, tasks } = data;
   const { theme, toggleTheme } = useTheme();
   const { flash, showFlash } = useToast();
 
   const today = todayStart();
 
-  const currentUser = useMemo(() => {
-    if (data.backend === 'sharepoint' && auth.account) {
-      const name = auth.account.name || auth.account.username || 'Usuario';
-      const match = team.find((p) => p.nombre.toLowerCase() === name.toLowerCase());
-      return match || { nombre: name, rol: 'Miembro del equipo', iniciales: inic(name), color: PALETTE[0] };
-    }
-    return team[0] || null;
-  }, [data.backend, auth.account, team]);
+  const currentUser = useMemo(() => team[0] || null, [team]);
 
   const [view, setViewRaw] = useState('tablero');
   const [fResp, setFResp] = useState('todos');
@@ -653,7 +644,6 @@ export function useAppLogic() {
     error: data.error,
     backend: data.backend,
     currentUser,
-    auth,
 
     // view/nav
     view,

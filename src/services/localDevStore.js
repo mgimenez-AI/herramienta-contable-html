@@ -4,10 +4,10 @@ import { uid } from '../utils/helpers';
 const KEY = 'gestion_contable_local_v1';
 
 /**
- * Data store used automatically when SharePoint isn't configured (no VITE_SP_* env vars).
- * Persists to this browser's localStorage only — not shared across the team.
- * Mirrors the async interface of graphSharePointStore so the rest of the app
- * is backend-agnostic.
+ * Data store used as an offline fallback.
+ * Persists to this browser's localStorage only, so it is not shared across the team.
+ * Mirrors the async interface of the GitHub store so the rest of the app is
+ * backend-agnostic.
  */
 export function createLocalDevStore() {
   function load() {

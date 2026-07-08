@@ -1,13 +1,10 @@
 import { createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import { createGitHubRepoStore, isGitHubStoreConfigured } from '../services/githubRepoStore';
 import { createLocalDevStore } from '../services/localDevStore';
-import { createSharePointStore } from '../services/spGraphStore';
-import { isSharePointConfigured } from '../auth/msalConfig';
-import { useAuth } from '../auth/AuthProvider';
 
 const DataContext = createContext(null);
 
 export function DataProvider({ children }) {
-  const auth = useAuth();
   const storeRef = useRef(null);
   const [team, setTeam] = useState([]);
   const [projects, setProjects] = useState([]);
@@ -15,16 +12,10 @@ export function DataProvider({ children }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
-  const ready = isSharePointConfigured ? auth.isAuthenticated : true;
-
   useEffect(() => {
-    if (!ready) {
-      setLoading(false);
-      return;
-    }
     let cancelled = false;
     if (!storeRef.current) {
-      storeRef.current = isSharePointConfigured ? createSharePointStore(auth.getAccessToken) : createLocalDevStore();
+      storeRef.current = isGitHubStoreConfigured ? createGitHubRepoStore() : createLocalDevStore();
     }
     setLoading(true);
     storeRef.current
@@ -45,8 +36,7 @@ export function DataProvider({ children }) {
     return () => {
       cancelled = true;
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [ready]);
+  }, []);
 
   const store = () => storeRef.current;
 
@@ -106,7 +96,7 @@ export function DataProvider({ children }) {
     tasks,
     loading,
     error,
-    backend: isSharePointConfigured ? 'sharepoint' : 'local',
+    backend: storeRef.current?.kind || (isGitHubStoreConfigured ? 'github' : 'local'),
     ...actions,
   };
 
