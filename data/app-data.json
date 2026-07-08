@@ -130,7 +130,7 @@
       "id": 7,
       "title": "Conciliacion de cuentas por pagar",
       "resp": "r",
-      "estado": "completado",
+      "estado": "revision",
       "venc": "2026-07-07",
       "proy": "concil",
       "prio": "baja",
