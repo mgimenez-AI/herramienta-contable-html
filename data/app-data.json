@@ -97,7 +97,7 @@
       "id": 4,
       "title": "Anticipo Impuesto a las Ganancias",
       "resp": "a",
-      "estado": "progreso",
+      "estado": "pendiente",
       "venc": "2026-07-19",
       "proy": "impuestos",
       "prio": "alta",
