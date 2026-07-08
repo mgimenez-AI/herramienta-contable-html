@@ -26,6 +26,7 @@ export function Header({ logic }) {
   return (
     <header
       data-noprint="1"
+      className="app-header"
       style={{
         background: 'var(--surface)',
         borderBottom: '1px solid var(--border)',
@@ -37,8 +38,8 @@ export function Header({ logic }) {
         flexWrap: 'wrap',
       }}
     >
-      <div style={{ flex: '1 1 220px', minWidth: 0 }}>
-        <div style={{ fontSize: 20, fontWeight: 700, letterSpacing: -0.4, lineHeight: 1.1, whiteSpace: 'nowrap' }}>{title}</div>
+      <div className="header-title" style={{ flex: '1 1 220px', minWidth: 0 }}>
+        <div style={{ fontSize: 20, fontWeight: 700, letterSpacing: -0.4, lineHeight: 1.1 }}>{title}</div>
         <div
           style={{
             fontSize: 12.5,
@@ -54,7 +55,7 @@ export function Header({ logic }) {
       </div>
 
       {showFilters && (
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
+        <div className="header-filters" style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
           <select
             value={fResp}
             onChange={(e) => setFResp(e.target.value)}
@@ -102,7 +103,7 @@ export function Header({ logic }) {
         </div>
       )}
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+      <div className="header-actions" style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
         <Hoverable
           as="button"
           onClick={toggleTheme}
@@ -171,6 +172,7 @@ export function Header({ logic }) {
                 top: 46,
                 right: 0,
                 width: 320,
+                maxWidth: 'calc(100vw - 24px)',
                 background: 'var(--surface)',
                 border: '1px solid var(--border)',
                 borderRadius: 12,

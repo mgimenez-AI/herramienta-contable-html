@@ -104,7 +104,7 @@ export function TableroView({ logic }) {
 
   return (
     <div>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 14, marginBottom: 22 }}>
+      <div className="kpi-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 14, marginBottom: 22 }}>
         {kpis.map((k) => (
           <div key={k.label} style={{ background: 'var(--surface)', border: '1px solid var(--border-card)', borderRadius: 12, padding: '16px 18px' }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -119,7 +119,7 @@ export function TableroView({ logic }) {
         ))}
       </div>
 
-      <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start', overflowX: 'auto', paddingBottom: 8 }}>
+      <div className="board-columns" style={{ display: 'flex', gap: 16, alignItems: 'flex-start', overflowX: 'auto', paddingBottom: 8 }}>
         {columns.map((col) => (
           <div key={col.key} style={{ flex: 1, minWidth: 288, display: 'flex', flexDirection: 'column' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 9, padding: '0 4px 12px' }}>

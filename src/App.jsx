@@ -64,7 +64,8 @@ function MainApp() {
     <div
       id="approot"
       data-theme={logic.theme}
-      style={{ display: 'flex', height: '100vh', width: '100vw', overflow: 'hidden', background: 'var(--bg)', color: 'var(--text)' }}
+      className="app-shell"
+      style={{ display: 'flex', height: '100dvh', width: '100vw', overflow: 'hidden', background: 'var(--bg)', color: 'var(--text)' }}
     >
       <Sidebar
         view={logic.view}
@@ -76,7 +77,9 @@ function MainApp() {
       />
       <main id="appmain" style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
         <Header logic={logic} />
-        <div style={{ flex: 1, overflow: 'auto', padding: '24px 28px' }}>{Views(logic)}</div>
+        <div className="app-content" style={{ flex: 1, overflow: 'auto', padding: '24px 28px' }}>
+          {Views(logic)}
+        </div>
       </main>
 
       <TaskDetailModal logic={logic} />

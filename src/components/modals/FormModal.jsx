@@ -26,6 +26,7 @@ export function FormModal({ logic }) {
   return (
     <div
       onClick={closeForm}
+      className="modal-backdrop"
       style={{
         position: 'fixed',
         inset: 0,
@@ -73,7 +74,7 @@ export function FormModal({ logic }) {
                 style={{ ...INPUT_STYLE, minHeight: 70, resize: 'vertical', lineHeight: 1.5 }}
               />
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
+            <div className="form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
               <div>
                 <div style={LABEL_STYLE}>Responsable</div>
                 <select value={d.resp || ''} onChange={(e) => setDraftField('resp', e.target.value)} style={{ ...INPUT_STYLE, background: 'var(--surface)', cursor: 'pointer' }}>
@@ -182,7 +183,7 @@ export function FormModal({ logic }) {
             </div>
             <div>
               <div style={{ ...LABEL_STYLE, marginBottom: 8 }}>Tipo de proyecto</div>
-              <div style={{ display: 'flex', gap: 10 }}>
+              <div className="choice-grid" style={{ display: 'flex', gap: 10 }}>
                 {[
                   { key: 'recurrente', label: 'Recurrente', sub: 'Se repite cada período' },
                   { key: 'extraordinario', label: 'Extraordinario', sub: 'Puntual, con inicio y fin' },
@@ -228,6 +229,7 @@ export function FormModal({ logic }) {
         )}
 
         <div
+          className="modal-footer"
           style={{
             padding: '16px 24px',
             background: 'var(--surface-2)',

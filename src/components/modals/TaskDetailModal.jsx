@@ -8,6 +8,7 @@ export function TaskDetailModal({ logic }) {
   return (
     <div
       onClick={closeDetail}
+      className="modal-backdrop"
       style={{
         position: 'fixed',
         inset: 0,
@@ -24,11 +25,12 @@ export function TaskDetailModal({ logic }) {
         style={{
           width: 520,
           maxWidth: '92vw',
+          maxHeight: '92dvh',
           background: 'var(--surface)',
           borderRadius: 16,
           boxShadow: '0 24px 60px rgba(20,30,40,.28)',
           animation: 'modalIn .2s cubic-bezier(.2,.8,.3,1)',
-          overflow: 'hidden',
+          overflow: 'auto',
         }}
       >
         <div style={{ padding: '22px 24px 18px', borderBottom: '1px solid var(--border-soft)', borderTop: `4px solid ${sel.prioColor}` }}>
@@ -72,7 +74,7 @@ export function TaskDetailModal({ logic }) {
           <div style={{ fontSize: 19, fontWeight: 700, letterSpacing: -0.4, lineHeight: 1.25 }}>{sel.title}</div>
           <div style={{ fontSize: 13, color: 'var(--text-soft)', marginTop: 8, lineHeight: 1.5 }}>{sel.desc}</div>
         </div>
-        <div style={{ padding: '20px 24px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+        <div className="detail-grid" style={{ padding: '20px 24px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
           <div>
             <div style={{ fontSize: 11, color: 'var(--text-mute)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: 0.4, marginBottom: 8 }}>
               Responsable
@@ -119,7 +121,7 @@ export function TaskDetailModal({ logic }) {
           <div style={{ fontSize: 11, color: 'var(--text-mute)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: 0.4, marginBottom: 9 }}>
             Cambiar estado
           </div>
-          <div style={{ display: 'flex', gap: 8 }}>
+          <div className="status-buttons" style={{ display: 'flex', gap: 8 }}>
             {estadoBtns.map((e) => (
               <button
                 key={e.key}
@@ -143,6 +145,7 @@ export function TaskDetailModal({ logic }) {
           </div>
         </div>
         <div
+          className="modal-footer"
           style={{
             padding: '16px 24px',
             background: 'var(--surface-2)',

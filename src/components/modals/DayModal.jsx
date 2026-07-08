@@ -8,6 +8,7 @@ export function DayModal({ logic }) {
   return (
     <div
       onClick={closeDay}
+      className="modal-backdrop"
       style={{
         position: 'fixed',
         inset: 0,
@@ -116,7 +117,7 @@ export function DayModal({ logic }) {
           ))}
           {dayEmpty && <div style={{ textAlign: 'center', padding: '26px 12px', color: 'var(--text-mute)', fontSize: 12.5 }}>Sin vencimientos este día</div>}
         </div>
-        <div style={{ padding: '14px 16px 18px', borderTop: '1px solid var(--border-soft)', display: 'flex', gap: 9, flexShrink: 0 }}>
+        <div className="modal-footer" style={{ padding: '14px 16px 18px', borderTop: '1px solid var(--border-soft)', display: 'flex', gap: 9, flexShrink: 0 }}>
           <Hoverable
             as="button"
             onClick={addTaskOnDay}

@@ -120,7 +120,7 @@ export function ProyectosView({ logic }) {
           </div>
         </div>
       </div>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 18 }}>
+      <div className="project-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 18 }}>
         {recurrentesCards.map((p) => (
           <ProjectCard key={p.id} p={p} onEdit={() => openEditProject(p)} />
         ))}
@@ -168,7 +168,7 @@ export function ProyectosView({ logic }) {
           </div>
         </div>
       </div>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 18 }}>
+      <div className="project-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 18 }}>
         {extraordinariosCards.map((p) => (
           <ProjectCard key={p.id} p={p} onEdit={() => openEditProject(p)} />
         ))}

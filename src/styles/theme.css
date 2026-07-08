@@ -146,6 +146,242 @@ button {
   font: inherit;
 }
 
+.calendar-card {
+  overflow-x: auto !important;
+}
+
+@media (max-width: 1100px) {
+  .kpi-grid,
+  .report-kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body {
+    overflow: hidden;
+  }
+
+  .app-shell {
+    flex-direction: column !important;
+  }
+
+  .app-sidebar {
+    width: 100% !important;
+    max-height: 168px;
+    border-right: none !important;
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .sidebar-brand {
+    padding: 12px 14px 8px !important;
+  }
+
+  .sidebar-nav {
+    padding: 8px 10px 12px !important;
+    flex-direction: row !important;
+    gap: 8px !important;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .sidebar-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sidebar-nav > div:first-child,
+  .sidebar-current-user,
+  .app-sidebar > div:nth-of-type(2) {
+    display: none !important;
+  }
+
+  .sidebar-nav button {
+    flex: 0 0 auto;
+    width: auto !important;
+    min-height: 40px;
+    padding: 9px 12px !important;
+    white-space: nowrap;
+  }
+
+  .app-header {
+    padding: 12px 14px !important;
+    gap: 12px !important;
+  }
+
+  .header-title {
+    flex-basis: 100% !important;
+  }
+
+  .header-title > div:first-child {
+    white-space: normal !important;
+  }
+
+  .header-filters,
+  .header-actions {
+    width: 100%;
+  }
+
+  .header-filters select {
+    flex: 1 1 140px;
+    min-width: 0;
+  }
+
+  .header-actions {
+    justify-content: space-between;
+    gap: 8px !important;
+    overflow-x: auto;
+    padding-bottom: 2px;
+  }
+
+  .header-actions > button,
+  .header-actions > div {
+    flex: 0 0 auto;
+  }
+
+  .app-content {
+    padding: 14px !important;
+  }
+
+  .kpi-grid,
+  .report-kpis {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+
+  .board-columns {
+    gap: 12px !important;
+    scroll-snap-type: x proximity;
+  }
+
+  .board-columns > div {
+    flex: 0 0 min(86vw, 340px) !important;
+    min-width: 0 !important;
+    scroll-snap-align: start;
+  }
+
+  .calendar-actions {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 2px;
+  }
+
+  .calendar-actions button {
+    flex: 0 0 auto;
+  }
+
+  .calendar-weekdays,
+  .calendar-week {
+    min-width: 640px;
+  }
+
+  .load-person-row {
+    align-items: flex-start !important;
+    flex-wrap: wrap;
+  }
+
+  .load-metrics {
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px !important;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  #reporte {
+    padding: 22px 18px !important;
+    overflow-x: auto;
+  }
+
+  .report-heading,
+  .report-project-row,
+  .report-team-row {
+    flex-wrap: wrap;
+  }
+
+  .report-project-row > div:first-child {
+    width: 100% !important;
+  }
+
+  .report-team-row > div:nth-child(2) {
+    flex-basis: calc(100% - 44px) !important;
+  }
+
+  .modal-backdrop {
+    align-items: flex-end !important;
+    padding: 10px !important;
+  }
+
+  .form-grid,
+  .detail-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .choice-grid,
+  .status-buttons,
+  .modal-footer,
+  .import-summary {
+    flex-wrap: wrap;
+  }
+
+  .modal-footer {
+    align-items: stretch !important;
+  }
+
+  .modal-footer > div,
+  .modal-footer button {
+    width: 100%;
+  }
+
+  .modal-footer > div {
+    display: flex;
+    gap: 9px;
+  }
+
+  .modal-footer > div button {
+    flex: 1;
+  }
+
+  .import-step {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 430px) {
+  .app-sidebar {
+    max-height: 150px;
+  }
+
+  .sidebar-brand {
+    gap: 9px !important;
+  }
+
+  .sidebar-nav span {
+    font-size: 12.5px;
+  }
+
+  .kpi-grid,
+  .report-kpis {
+    grid-template-columns: 1fr !important;
+  }
+
+  .calendar-weekdays,
+  .calendar-week {
+    min-width: 560px;
+  }
+
+  .load-metrics {
+    text-align: left !important;
+  }
+}
+
 @media print {
   [data-noprint] {
     display: none !important;

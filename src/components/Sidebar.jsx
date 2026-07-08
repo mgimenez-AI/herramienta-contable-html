@@ -31,6 +31,7 @@ export function Sidebar({ view, setView, team, openNewPerson, openEditPerson, cu
   return (
     <aside
       data-noprint="1"
+      className="app-sidebar"
       style={{
         width: 256,
         flexShrink: 0,
@@ -41,6 +42,7 @@ export function Sidebar({ view, setView, team, openNewPerson, openEditPerson, cu
       }}
     >
       <div
+        className="sidebar-brand"
         style={{
           padding: '22px 20px 18px',
           borderBottom: '1px solid var(--border-soft)',
@@ -69,7 +71,7 @@ export function Sidebar({ view, setView, team, openNewPerson, openEditPerson, cu
         </div>
       </div>
 
-      <nav style={{ padding: '14px 12px', display: 'flex', flexDirection: 'column', gap: 3 }}>
+      <nav className="sidebar-nav" style={{ padding: '14px 12px', display: 'flex', flexDirection: 'column', gap: 3 }}>
         <div
           style={{
             fontSize: 10.5,
@@ -200,6 +202,7 @@ export function Sidebar({ view, setView, team, openNewPerson, openEditPerson, cu
       </div>
 
       <div
+        className="sidebar-current-user"
         style={{
           marginTop: 'auto',
           padding: '14px 16px',

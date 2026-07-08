@@ -17,7 +17,7 @@ export function CalendarioView({ logic }) {
   const { monthLabel, weeks, prevMonth, nextMonth, goToday, genRecurring, openDay, openDetail } = logic;
 
   return (
-    <div style={{ background: 'var(--surface)', border: '1px solid var(--border-card)', borderRadius: 14, overflow: 'hidden' }}>
+    <div className="calendar-card" style={{ background: 'var(--surface)', border: '1px solid var(--border-card)', borderRadius: 14, overflow: 'hidden' }}>
       <div
         style={{
           display: 'flex',
@@ -30,7 +30,7 @@ export function CalendarioView({ logic }) {
         }}
       >
         <div style={{ fontSize: 16, fontWeight: 700, letterSpacing: -0.3 }}>{monthLabel}</div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+        <div className="calendar-actions" style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <Hoverable
             as="button"
             onClick={genRecurring}
@@ -81,7 +81,7 @@ export function CalendarioView({ logic }) {
         </div>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7,1fr)', background: 'var(--panel)', borderBottom: '1px solid var(--border-soft)' }}>
+      <div className="calendar-weekdays" style={{ display: 'grid', gridTemplateColumns: 'repeat(7,1fr)', background: 'var(--panel)', borderBottom: '1px solid var(--border-soft)' }}>
         {['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'].map((d) => (
           <div key={d} style={{ padding: '9px 12px', fontSize: 11, fontWeight: 600, color: 'var(--text-mute)', textTransform: 'uppercase', letterSpacing: 0.5 }}>
             {d}
@@ -90,14 +90,14 @@ export function CalendarioView({ logic }) {
       </div>
 
       {weeks.map((w, wi) => (
-        <div key={wi} style={{ display: 'grid', gridTemplateColumns: 'repeat(7,1fr)' }}>
+        <div className="calendar-week" key={wi} style={{ display: 'grid', gridTemplateColumns: 'repeat(7,1fr)' }}>
           {w.days.map((d) => (
             <Hoverable
               as="div"
               key={d.key}
               onClick={() => openDay(d.key)}
               style={{
-                height: 112,
+                minHeight: 112,
                 overflow: 'hidden',
                 padding: '6px 8px',
                 borderRight: '1px solid var(--border-soft)',

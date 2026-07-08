@@ -11,6 +11,7 @@ export function ImportModal({ logic }) {
   return (
     <div
       onClick={closeImport}
+      className="modal-backdrop"
       style={{
         position: 'fixed',
         inset: 0,
@@ -46,7 +47,7 @@ export function ImportModal({ logic }) {
         </div>
 
         <div style={{ padding: '20px 24px', overflow: 'auto', display: 'flex', flexDirection: 'column', gap: 16 }}>
-          <div style={{ display: 'flex', gap: 13, alignItems: 'flex-start' }}>
+          <div className="import-step" style={{ display: 'flex', gap: 13, alignItems: 'flex-start' }}>
             <div
               style={{
                 width: 24,
@@ -94,7 +95,7 @@ export function ImportModal({ logic }) {
             </div>
           </div>
 
-          <div style={{ display: 'flex', gap: 13, alignItems: 'flex-start' }}>
+          <div className="import-step" style={{ display: 'flex', gap: 13, alignItems: 'flex-start' }}>
             <div
               style={{
                 width: 24,
@@ -149,7 +150,7 @@ export function ImportModal({ logic }) {
 
           {hasSummary && (
             <div style={{ border: '1px solid var(--border-card)', borderRadius: 12, overflow: 'hidden' }}>
-              <div style={{ display: 'flex', background: 'var(--surface-2)', borderBottom: '1px solid var(--border-soft)' }}>
+              <div className="import-summary" style={{ display: 'flex', background: 'var(--surface-2)', borderBottom: '1px solid var(--border-soft)' }}>
                 <div style={{ flex: 1, padding: '11px 14px', textAlign: 'center', borderRight: '1px solid var(--border-soft)' }}>
                   <div style={{ fontSize: 20, fontWeight: 700, fontFamily: "'IBM Plex Mono',monospace", color: 'var(--tint-success-fg)' }}>{importSummary.ok}</div>
                   <div style={{ fontSize: 10.5, color: 'var(--text-mute)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: 0.3 }}>Listas</div>
@@ -185,7 +186,7 @@ export function ImportModal({ logic }) {
           )}
         </div>
 
-        <div style={{ padding: '15px 24px', background: 'var(--surface-2)', borderTop: '1px solid var(--border-soft)', display: 'flex', justifyContent: 'flex-end', gap: 9, flexShrink: 0 }}>
+        <div className="modal-footer" style={{ padding: '15px 24px', background: 'var(--surface-2)', borderTop: '1px solid var(--border-soft)', display: 'flex', justifyContent: 'flex-end', gap: 9, flexShrink: 0 }}>
           <Hoverable
             as="button"
             onClick={closeImport}

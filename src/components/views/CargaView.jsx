@@ -4,7 +4,7 @@ export function CargaView({ logic }) {
     <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
       {teamLoad.map((p) => (
         <div key={p.id} style={{ background: 'var(--surface)', border: '1px solid var(--border-card)', borderRadius: 14, padding: '20px 22px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+          <div className="load-person-row" style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
             <div
               style={{
                 width: 44,
@@ -26,7 +26,7 @@ export function CargaView({ logic }) {
               <div style={{ fontSize: 15.5, fontWeight: 700, letterSpacing: -0.2 }}>{p.nombre}</div>
               <div style={{ fontSize: 12, color: 'var(--text-mute)' }}>{p.rol}</div>
             </div>
-            <div style={{ display: 'flex', gap: 26, textAlign: 'center' }}>
+            <div className="load-metrics" style={{ display: 'flex', gap: 26, textAlign: 'center' }}>
               <div>
                 <div style={{ fontSize: 22, fontWeight: 700, fontFamily: "'IBM Plex Mono',monospace", letterSpacing: -0.5 }}>{p.activas}</div>
                 <div style={{ fontSize: 10.5, color: 'var(--text-mute)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: 0.4 }}>Activas</div>

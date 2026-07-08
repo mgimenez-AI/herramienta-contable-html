@@ -33,7 +33,7 @@ export function ReporteView({ logic }) {
       </div>
 
       <div id="reporte" style={{ background: 'var(--surface)', border: '1px solid var(--border-card)', borderRadius: 14, padding: '38px 44px' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: '2px solid #00549E', paddingBottom: 18 }}>
+        <div className="report-heading" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: '2px solid #00549E', paddingBottom: 18 }}>
           <div>
             <div style={{ fontSize: 22, fontWeight: 700, letterSpacing: -0.5 }}>Reporte de gestión del sector</div>
             <div style={{ fontSize: 13, color: 'var(--text-soft)', marginTop: 4 }}>Contabilidad e Impuestos · {reportDate}</div>
@@ -54,7 +54,7 @@ export function ReporteView({ logic }) {
           </div>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 14, marginTop: 26 }}>
+        <div className="report-kpis" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 14, marginTop: 26 }}>
           {kpis.map((k) => (
             <div key={k.label} style={{ border: '1px solid var(--border-card)', borderRadius: 10, padding: '14px 16px' }}>
               <div style={{ fontSize: 11.5, color: 'var(--text-soft)', fontWeight: 600 }}>{k.label}</div>
@@ -67,7 +67,7 @@ export function ReporteView({ logic }) {
 
         <div style={{ fontSize: 14, fontWeight: 700, marginTop: 30, marginBottom: 14, color: 'var(--text)' }}>Avance por proyecto</div>
         {projectCards.map((p) => (
-          <div key={p.id} style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '9px 0', borderBottom: '1px solid var(--border-soft)' }}>
+          <div className="report-project-row" key={p.id} style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '9px 0', borderBottom: '1px solid var(--border-soft)' }}>
             <div style={{ width: 180, fontSize: 13, fontWeight: 600, flexShrink: 0 }}>{p.nombre}</div>
             <div style={{ flex: 1, height: 8, background: 'var(--track)', borderRadius: 20, overflow: 'hidden' }}>
               <div style={{ height: '100%', borderRadius: 20, background: p.color, width: p.pctW }} />
@@ -81,7 +81,7 @@ export function ReporteView({ logic }) {
 
         <div style={{ fontSize: 14, fontWeight: 700, marginTop: 30, marginBottom: 14, color: 'var(--text)' }}>Estado del equipo</div>
         {teamLoad.map((p) => (
-          <div key={p.id} style={{ display: 'flex', alignItems: 'center', gap: 14, padding: '9px 0', borderBottom: '1px solid var(--border-soft)' }}>
+          <div className="report-team-row" key={p.id} style={{ display: 'flex', alignItems: 'center', gap: 14, padding: '9px 0', borderBottom: '1px solid var(--border-soft)' }}>
             <div
               style={{
                 width: 26,
